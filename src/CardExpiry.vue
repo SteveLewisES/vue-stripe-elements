@@ -18,6 +18,7 @@ import StripeElement from './StripeElement'
 export default {
   props,
   components: { StripeElement },
+  emits: ['blur', 'focus', 'change'],
   methods: {
     blur () { this.$refs.element.blur() },
     clear () { this.$refs.element.clear() },
