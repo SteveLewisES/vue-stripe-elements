@@ -1,4 +1,5 @@
 <template>
+    <div ref="root" />
 </template>
 
 <script>
@@ -17,14 +18,14 @@ export default {
   },
 
   mounted () {
-    // Vue likes to stay in control of $el but Stripe needs a real element
-    const el = document.createElement('div')
-    this._element.mount(el)
-    // this.$children cannot be used because it expects a VNode :(
-    this.$el.appendChild(el)
+      const el = document.createElement('div')
+
+      this._element.mount(el)
+
+      this.$refs['root'].appendChild(el)
   },
 
-  beforeDestroy () {
+    beforeUnmount () {
     this._element.unmount()
     this._element.destroy()
     destroy()
