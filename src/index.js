@@ -1,3 +1,4 @@
+console.log('Steve Test')
 import './lib'
 import { Stripe, baseStyle } from './stripeElements'
 import StripeElement from './StripeElement'
